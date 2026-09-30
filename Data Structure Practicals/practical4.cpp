@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 struct Node {
     int data;
@@ -32,7 +31,7 @@ public:
 
     void pop() {
         if (isEmpty()) {
-            cout << "Stack Underflow\n";
+            std::cout << "Stack Underflow\n";
             return;
         }
         Node* temp = top;
@@ -42,7 +41,7 @@ public:
 
     int peek() {
         if (isEmpty()) {
-            cout << "Stack is Empty\n";
+            std::cout << "Stack is Empty\n";
             return -1;
         }
         return top->data;
@@ -50,16 +49,16 @@ public:
 
     void display() {
         if (isEmpty()) {
-            cout << "Stack is Empty\n";
+            std::cout << "Stack is Empty\n";
             return;
         }
         Node* temp = top;
-        cout << "Stack: ";
+        std::cout << "Stack: ";
         while (temp != nullptr) {
-            cout << temp->data << " ";
+            std::cout << temp->data << " ";
             temp = temp->next;
         }
-        cout << "\n";
+        std::cout << "\n";
     }
 };
 
@@ -93,7 +92,7 @@ public:
 
     void dequeue() {
         if (isEmpty()) {
-            cout << "Queue Underflow\n";
+            std::cout << "Queue Underflow\n";
             return;
         }
         Node* temp = front;
@@ -106,7 +105,7 @@ public:
 
     int getFront() {
         if (isEmpty()) {
-            cout << "Queue is Empty\n";
+            std::cout << "Queue is Empty\n";
             return -1;
         }
         return front->data;
@@ -114,16 +113,16 @@ public:
 
     void display() {
         if (isEmpty()) {
-            cout << "Queue is Empty\n";
+            std::cout << "Queue is Empty\n";
             return;
         }
         Node* temp = front;
-        cout << "Queue: ";
+        std::cout << "Queue: ";
         while (temp != nullptr) {
-            cout << temp->data << " ";
+            std::cout << temp->data << " ";
             temp = temp->next;
         }
-        cout << "\n";
+        std::cout << "\n";
     }
 };
 
@@ -133,7 +132,7 @@ int main() {
     stack.push(20);
     stack.push(30);
     stack.display();
-    cout << "Top element: " << stack.peek() << "\n";
+    std::cout << "Top element: " << stack.peek() << "\n";
     stack.pop();
     stack.display();
 
@@ -142,7 +141,7 @@ int main() {
     queue.enqueue(200);
     queue.enqueue(300);
     queue.display();
-    cout << "Front element: " << queue.getFront() << "\n";
+    std::cout << "Front element: " << queue.getFront() << "\n";
     queue.dequeue();
     queue.display();
 
